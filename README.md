@@ -50,3 +50,10 @@ För att komma igång med projektet:
 Låt din kreativitet flöda och använd detta tillfälle för att lära dig så mycket som möjligt. Det är inte bara en övning i att hitta problem, utan också en chans att utveckla lösningar och bygga en robust och skalbar applikation!
 
 Happy coding! 👩‍💻👨‍💻
+
+
+
+
+react - skapa i variabler utan useState?
+när semikolon när inte
+axios i mvc

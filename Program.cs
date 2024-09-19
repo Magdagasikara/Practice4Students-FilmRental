@@ -7,6 +7,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add Cors to frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("LocalReact", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 // Add services to the container.
 builder.Services.AddDbContext<FilmRentalContext>(options =>
 {
@@ -29,6 +40,7 @@ builder.Services.AddScoped<IRentalRepository, RentalRepository>();
 builder.Services.AddScoped<IRentalService, RentalService>();
 
 var app = builder.Build();
+app.UseCors("LocalReact");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
